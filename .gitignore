@@ -1,0 +1,40 @@
+# IDE
+.idea/
+*.iml
+*.iws
+
+# Maven
+target/
+pom.xml.versionsBackup
+
+# Database
+docker-compose.override.yml
+*.db
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+*.local
+
+# Java
+*.class
+*.jar
+
+# IntelliJ
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Test coverage
+coverage/

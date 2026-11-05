@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: kucharka-db
+    environment:
+      POSTGRES_DB: kucharka
+      POSTGRES_USER: kucharka
+      POSTGRES_PASSWORD: kucharka
+    ports:
+      - "5433:5433"
+    volumes:
+      - kucharka-data:/var/lib/postgresql/data
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ./sql/data.sql:/docker-entrypoint-initdb.d/02-data.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kucharka -d kucharka"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  kucharka-data:
