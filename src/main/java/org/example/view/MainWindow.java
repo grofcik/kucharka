@@ -1,13 +1,17 @@
 package org.example.view;
 
 import javafx.application.Application;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import java.util.stream.Collectors;
 import javafx.stage.Stage;
 import org.example.factory.DatabaseFactory;
 import org.example.model.Recept;
@@ -317,20 +321,5 @@ public class MainWindow extends Application {
     public void stop() {
         // Zatvorenie databázy
         DatabaseFactory.close();
-    }
-}
-
-/**
- * Simple wrapper classes for TableView
- */
-class SimpleStringProperty extends javafx.beans.property.SimpleStringProperty {
-    public SimpleStringProperty(String value) {
-        super(value);
-    }
-}
-
-class SimpleIntegerProperty extends javafx.beans.property.SimpleIntegerProperty {
-    public SimpleIntegerProperty(Integer value) {
-        super(value);
     }
 }
